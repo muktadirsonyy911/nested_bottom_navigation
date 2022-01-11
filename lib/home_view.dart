@@ -9,14 +9,12 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       body: Container(
         child: Center(
           child:ElevatedButton(
             onPressed: (){
               Get.to(DashboardDetailsView());
             },
-
             child: Text("Go to next"),
           ),
         ),

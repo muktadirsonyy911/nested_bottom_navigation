@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:nested_bottom_navigationbar/home_view.dart';
 import 'package:nested_bottom_navigationbar/views/dashboard_view.dart';
+import 'package:nested_bottom_navigationbar/views/menu_screen.dart';
 import 'package:nested_bottom_navigationbar/views/profile_view.dart';
-import 'package:nested_bottom_navigationbar/views/settings_view.dart';
 
 class CustomBottomAppBar extends StatelessWidget {
-   CustomBottomAppBar({Key? key, this.selectedIndex}) : super(key: key);
+  CustomBottomAppBar({Key? key, this.selectedIndex}) : super(key: key);
   final int? selectedIndex;
   @override
   Widget build(BuildContext context) {
@@ -33,16 +33,13 @@ class CustomBottomAppBar extends StatelessWidget {
                     children: [
                       Icon(
                         Icons.home,
-                        color: selectedIndex == 0
-                            ? Colors.blue
-                            : Colors.grey,
+                        color: selectedIndex == 0 ? Colors.blue : Colors.grey,
                       ),
                       Text(
                         'Home',
                         style: TextStyle(
-                            color: selectedIndex == 0
-                                ? Colors.blue
-                                : Colors.grey),
+                            color:
+                                selectedIndex == 0 ? Colors.blue : Colors.grey),
                       )
                     ],
                   ),
@@ -59,16 +56,13 @@ class CustomBottomAppBar extends StatelessWidget {
                     children: [
                       Icon(
                         Icons.person,
-                        color: selectedIndex == 1
-                            ? Colors.blue
-                            : Colors.grey,
+                        color: selectedIndex == 1 ? Colors.blue : Colors.grey,
                       ),
                       Text(
                         'Profile',
                         style: TextStyle(
-                            color: selectedIndex == 1
-                                ? Colors.blue
-                                : Colors.grey),
+                            color:
+                                selectedIndex == 1 ? Colors.blue : Colors.grey),
                       )
                     ],
                   ),
@@ -90,16 +84,13 @@ class CustomBottomAppBar extends StatelessWidget {
                     children: [
                       Icon(
                         Icons.dashboard,
-                        color: selectedIndex == 2
-                            ? Colors.blue
-                            : Colors.grey,
+                        color: selectedIndex == 2 ? Colors.blue : Colors.grey,
                       ),
                       Text(
                         'Dashboard',
                         style: TextStyle(
-                            color: selectedIndex == 2
-                                ? Colors.blue
-                                : Colors.grey),
+                            color:
+                                selectedIndex == 2 ? Colors.blue : Colors.grey),
                       )
                     ],
                   ),
@@ -108,7 +99,7 @@ class CustomBottomAppBar extends StatelessWidget {
                   minWidth: 40,
                   onPressed: () {
                     if (selectedIndex != 3) {
-                      Get.off(() => SettingsView());
+                      Get.bottomSheet(MenuScreen(), isScrollControlled: true);
                     }
                   },
                   child: Column(
@@ -116,16 +107,13 @@ class CustomBottomAppBar extends StatelessWidget {
                     children: [
                       Icon(
                         Icons.settings,
-                        color: selectedIndex == 3
-                            ? Colors.blue
-                            : Colors.grey,
+                        color: selectedIndex == 3 ? Colors.blue : Colors.grey,
                       ),
                       Text(
                         'Settings',
                         style: TextStyle(
-                            color: selectedIndex == 3
-                                ? Colors.blue
-                                : Colors.grey),
+                            color:
+                                selectedIndex == 3 ? Colors.blue : Colors.grey),
                       )
                     ],
                   ),
